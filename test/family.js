@@ -10,7 +10,7 @@ test('family() builds a family of functions for the Hamming distance', async t =
     const f = family(d);
 
     for (let i = 0, n = f.length; i < n; i++) {
-      t.is(f[i](v), v[i]);
+      t.same(f[i](v), [`@${v[i]}`]);
     }
   }
 });

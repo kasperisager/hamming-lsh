@@ -39,6 +39,9 @@
   },
   "xo": {
     "space": true,
-    "exnext": true
+    "exnext": true,
+    "rules": {
+      "new-cap": 0
+    }
   }
 }
