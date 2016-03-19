@@ -1,7 +1,7 @@
 {
   "name": "hamming-lsh",
   "version": "0.0.0",
-  "description": "An implementation of LSH for Hamming space",
+  "description": "An implementation of locality-sensitive hashing for Hamming space",
   "license": "MIT",
   "repository": "kasperisager/hamming-lsh",
   "private": true,
