@@ -2,7 +2,7 @@
 
 > An implementation of [locality-sensitive hashing](https://en.wikipedia.org/wiki/Locality-sensitive_hashing) for [Hamming space](https://en.wikipedia.org/wiki/Hamming_space)
 
-[![Build Status](https://travis-ci.org/kasperisager/hamming-lsh.svg?branch=master)](https://travis-ci.org/kasperisager/hamming-lsh)
+[![Build Status](https://travis-ci.org/kasperisager/hamming-lsh.svg?branch=master)](https://travis-ci.org/kasperisager/hamming-lsh) [![Inline docs](http://inch-ci.org/github/kasperisager/hamming-lsh.svg?branch=master)](http://inch-ci.org/github/kasperisager/hamming-lsh)
 
 ## Contents
 
