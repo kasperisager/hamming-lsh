@@ -1,6 +1,6 @@
 # Hamming LSH
 
-> An implementation of [LSH](https://en.wikipedia.org/wiki/Locality-sensitive_hashing) for [Hamming distances](https://en.wikipedia.org/wiki/Hamming_distance)
+> An implementation of [LSH](https://en.wikipedia.org/wiki/Locality-sensitive_hashing) for [Hamming space](https://en.wikipedia.org/wiki/Hamming_space)
 
 ## Contents
 
