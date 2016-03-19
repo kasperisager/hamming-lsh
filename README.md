@@ -11,7 +11,7 @@
 
 ## Installation
 
-```sh
+```console
 $ npm install --save hamming-lsh
 ```
 
