@@ -38,11 +38,14 @@ t.query(V(1, 0, 0, 1), 2);
 
 ### Table
 
+Construct a lookup table for vectors of dimensionality `d` where vectors are hashed using `k`-width hash values
+(random vector projections) into `l` sets of hashes.
+
 **Parameters**
 
 -   `d` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of dimensions of vectors in the table.
 -   `k` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The width of each vector hash.
--   `l` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of hash tables to use.
+-   `l` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of hash sets to use.
 
 **Examples**
 
