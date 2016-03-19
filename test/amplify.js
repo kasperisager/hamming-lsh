@@ -1,45 +1,32 @@
 import test from 'ava';
-import V, {distance} from '../lib/vector';
-import family, {select} from '../lib/family';
+import V from '../lib/vector';
+import family from '../lib/family';
 import {and, or} from '../lib/amplify';
 
-test('and()', async t => {
-  const f = select(or(and(family(10), 3), 4));
+test('and() amplifies a family of functions by concatenation of hashes', async t => {
+  const f = and(family(6), 3);
+  const v = V(1, 1, 1, 1, 1, 1);
 
-  const v1 = V(1, 0, 0, 1, 1, 1, 0, 1, 0, 1);
-  const v2 = V(1, 1, 0, 1, 1, 0, 0, 1, 1, 1);
-  const v3 = V(0, 1, 0, 0, 0, 1, 1, 0, 1, 0);
-  const v4 = V(1, 1, 0, 0, 1, 1, 0, 1, 0, 1);
+  for (const h of f) {
+    const hs = h(v);
+    const [h1] = hs;
 
-  const d = {};
-
-  for (const v of [v1, v2, v3]) {
-    for (const h of f(v)) {
-      if (!(h in d)) {
-        d[h] = new Set();
-      }
-
-      d[h].add(v);
-    }
+    t.is(hs.length, 1);
+    t.is(h1, 7);
   }
+});
 
-  function query(d, q, r) {
-    for (const h of f(q)) {
-      const vs = d[h];
+test('or() amplifies a family of functions by extension of hashes', async t => {
+  const f = or(family(6), 3);
+  const v = V(1, 1, 1, 1, 1, 1);
 
-      if (!vs) {
-        continue;
-      }
+  for (const h of f) {
+    const hs = h(v);
+    const [h1, h2, h3] = hs;
 
-      for (const v of vs) {
-        if (distance(q, v) <= r) {
-          return v;
-        }
-      }
-    }
-
-    return null;
+    t.is(hs.length, 3);
+    t.is(h1, 1);
+    t.is(h2, 1);
+    t.is(h3, 1);
   }
-
-  console.log('%s', query(d, v4, 4));
 });

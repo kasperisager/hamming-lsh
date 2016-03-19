@@ -18,9 +18,54 @@ $ npm install --save hamming-lsh
 ## Usage
 
 ```js
+
 ```
 
 ## API
+
+### Table
+
+**Parameters**
+
+-   `d` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `k` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `l` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+#### add
+
+Add a vector `v` to the lookup table.
+
+**Parameters**
+
+-   `v` **Vector** 
+
+#### query
+
+Query the lookup table for the nearest neighbour of a query vector `q` within distance `r`.
+
+**Parameters**
+
+-   `q` **Vector** 
+-   `r` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+Returns **Vector** 
+
+#### size
+
+Get the number of vectors in the lookup table.
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+### Vector
+
+**Parameters**
+
+-   `cs` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+**Properties**
+
+-   `value` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `length` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 ## License
 
