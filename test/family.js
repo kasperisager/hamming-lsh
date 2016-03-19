@@ -1,7 +1,7 @@
 import test from 'ava';
 import family from '../lib/family';
 
-test('family() builds a family of functions for the Hamming distance', async t => {
+test('family() builds a family of base functions', async t => {
   const fixtures = [
     [4, [1, 4, 2, 3]]
   ];
@@ -10,7 +10,7 @@ test('family() builds a family of functions for the Hamming distance', async t =
     const f = family(d);
 
     for (let i = 0, n = f.length; i < n; i++) {
-      t.same(f[i](v), [`@${v[i]}`]);
+      t.same(f[i](v), [v[i]]);
     }
   }
 });

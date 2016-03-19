@@ -1,11 +1,10 @@
 import test from 'ava';
-import V, * as Vector from '../lib/vector';
-import distance from '../lib/distance';
-import family, {random} from '../lib/family';
+import V, {distance} from '../lib/vector';
+import family, {select} from '../lib/family';
 import {and, or} from '../lib/amplify';
 
 test('and()', async t => {
-  const f = random(or(and(family(10), 4), 4));
+  const f = select(or(and(family(10), 3), 4));
 
   const v1 = V(1, 0, 0, 1, 1, 1, 0, 1, 0, 1);
   const v2 = V(1, 1, 0, 1, 1, 0, 0, 1, 1, 1);
@@ -42,5 +41,5 @@ test('and()', async t => {
     return null;
   }
 
-  console.log(query(d, v4, 4));
+  console.log('%s', query(d, v4, 4));
 });
