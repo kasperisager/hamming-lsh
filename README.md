@@ -55,7 +55,7 @@ Add a vector `v` to the lookup table.
 
 **Parameters**
 
--   `v` **Vector**
+-   `v` **Vector** The vector to add to the lookup table.
 
 **Examples**
 
@@ -96,7 +96,7 @@ t.size();
 // => 1
 ```
 
-Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of vectors in the lookup table.
 
 ### Vector
 
