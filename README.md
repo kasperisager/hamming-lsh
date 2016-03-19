@@ -36,9 +36,18 @@ t.query(V(1, 0, 0, 1), 2);
 
 **Parameters**
 
--   `d` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
--   `k` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
--   `l` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `d` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of dimensions of vectors in the table.
+-   `k` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The width of each vector hash.
+-   `l` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of hash tables to use.
+
+**Examples**
+
+```javascript
+const d = 4;
+const k = 2;
+const l = 2;
+const t = Table(d, k, l);
+```
 
 #### add
 
@@ -48,20 +57,44 @@ Add a vector `v` to the lookup table.
 
 -   `v` **Vector**
 
+**Examples**
+
+```javascript
+const v = Vector(1, 0, 1, 0);
+t.add(v);
+```
+
 #### query
 
 Query the lookup table for the nearest neighbour of a query vector `q` within distance `r`.
 
 **Parameters**
 
--   `q` **Vector**
--   `r` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `q` **Vector** The query vector to look up the nearest neighbour of.
+-   `r` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The maximum allowed distance between the query vector and the neighbour.
 
-Returns **Vector**
+**Examples**
+
+```javascript
+const q = Vector(0, 1, 0, 1);
+const r = 2;
+t.query(q, r);
+// => Vector(...)
+```
+
+Returns **Vector** The nearest neighbouring vector if found.
 
 #### size
 
 Get the number of vectors in the lookup table.
+
+**Examples**
+
+```javascript
+t.add(Vector(...));
+t.size();
+// => 1
+```
 
 Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
 
@@ -69,12 +102,25 @@ Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 **Parameters**
 
--   `cs` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `cs` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The components of the vector.
 
 **Properties**
 
--   `value` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
--   `length` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `value` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The binary value of the vector.
+-   `length` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of components in the vector.
+
+**Examples**
+
+```javascript
+const v = Vector(1, 0, 1);
+
+v[0]; // => 1
+v[1]; // => 0
+v[2]; // => 1
+
+v.value; // => 101
+v.length; // => 3
+```
 
 ## License
 
