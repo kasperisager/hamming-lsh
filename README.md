@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.org/kasperisager/hamming-lsh.svg?branch=master)](https://travis-ci.org/kasperisager/hamming-lsh) [![Code Climate](https://codeclimate.com/github/kasperisager/hamming-lsh/badges/gpa.svg)](https://codeclimate.com/github/kasperisager/hamming-lsh) [![Inline docs](http://inch-ci.org/github/kasperisager/hamming-lsh.svg?branch=master)](http://inch-ci.org/github/kasperisager/hamming-lsh)
 
+Locality-sensitive hashing (abbreviated _LSH_) is a method often used for answering approximate nearest neighbour queries in high-dimensional data sets. This library implements a version of LSH for solving the approximate _r_-nearest-neighbour problem for binary vectors in Hamming space.
+
 ## Contents
 
 -   [Installation](#installation)
