@@ -113,19 +113,15 @@ Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 **Properties**
 
--   `value` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The binary value of the vector.
 -   `length` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of components in the vector.
 
 **Examples**
 
 ```javascript
 const v = Vector(1, 0, 1);
-
 v[0]; // => 1
 v[1]; // => 0
 v[2]; // => 1
-
-v.value; // => 101
 v.length; // => 3
 ```
 
