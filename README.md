@@ -107,6 +107,8 @@ Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ### Vector
 
+Construct a vector consisting of binary components where truthy values represent 1 and falsy values represent 0.
+
 **Parameters**
 
 -   `cs` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The components of the vector.
