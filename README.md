@@ -26,12 +26,12 @@ import {Vector as V, Table as T} from 'hamming-lsh';
 
 const t = T(4, 2, 3);
 
-t.add(V(1, 0, 1, 1));
-t.add(V(0, 1, 0, 0));
-t.add(V(0, 1, 1, 0));
+t.add(V([1, 0, 1, 1]));
+t.add(V([0, 1, 0, 0]));
+t.add(V([0, 1, 1, 0]));
 
-t.query(V(1, 0, 0, 1), 2);
-// => V(1, 0, 1, 1) with high probability
+t.query(V([1, 0, 0, 1]), 2);
+// => V([1, 0, 1, 1]) with high probability
 ```
 
 ## API
@@ -67,7 +67,7 @@ Add a vector `v` to the lookup table.
 **Examples**
 
 ```javascript
-const v = Vector(1, 0, 1, 0);
+const v = Vector([1, 0, 1, 0]);
 t.add(v);
 ```
 
@@ -83,7 +83,7 @@ Query the lookup table for the nearest neighbour of a query vector `q` within di
 **Examples**
 
 ```javascript
-const q = Vector(0, 1, 0, 1);
+const q = Vector([0, 1, 0, 1]);
 const r = 2;
 t.query(q, r);
 // => Vector(...)
@@ -111,21 +111,45 @@ Construct a vector consisting of binary components where truthy values represent
 
 **Parameters**
 
--   `cs` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The components of the vector.
-
-**Properties**
-
--   `length` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of components in the vector.
+-   `cs` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>=** The components of the vector. (optional, default `[]`)
 
 **Examples**
 
 ```javascript
-const v = Vector(1, 0, 1);
-v[0]; // => 1
-v[1]; // => 0
-v[2]; // => 1
-v.length; // => 3
+const v = Vector([1, 0, 1]);
 ```
+
+#### get
+
+Get the component at the specified index of the vector.
+
+**Parameters**
+
+-   `i` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The index of the component to get.
+
+**Examples**
+
+```javascript
+const v = Vector([1, 0, 1, 1]);
+v.get(0);
+// => 1
+```
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The component at the index if found.
+
+#### size
+
+Get the number of components in the vector.
+
+**Examples**
+
+```javascript
+const v = Vector([1, 0, 0, 1]);
+v.size();
+// => 4
+```
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of components in the vector.
 
 ## License
 
