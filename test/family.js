@@ -11,7 +11,7 @@ test('family() builds a family of base functions', async t => {
     const f = family(d);
 
     for (let i = 0, n = f.length; i < n; i++) {
-      t.same(f[i](v), [v.get(i).toString(2)]);
+      t.deepEqual(f[i](v), [v.get(i).toString(2)]);
     }
   }
 });
