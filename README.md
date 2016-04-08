@@ -73,19 +73,17 @@ t.add(v);
 
 #### query
 
-Query the lookup table for the nearest neighbour of a query vector `q` within distance `r`.
+Query the lookup table for the nearest neighbour of a query vector `q`.
 
 **Parameters**
 
 -   `q` **Vector** The query vector to look up the nearest neighbour of.
--   `r` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The maximum allowed distance between the query vector and the neighbour.
 
 **Examples**
 
 ```javascript
 const q = Vector([0, 1, 0, 1]);
-const r = 2;
-t.query(q, r);
+t.query(q);
 // => Vector(...)
 ```
 
@@ -104,6 +102,16 @@ t.size();
 ```
 
 Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number of vectors in the lookup table.
+
+### contains
+
+Check if the lookup table contains a specific vector.
+
+**Parameters**
+
+-   `v` **Vector** The vector to check for.
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** `true` if the table contains the vector, otherwise `false`.
 
 ### Vector
 

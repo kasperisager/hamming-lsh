@@ -49,7 +49,7 @@ test('#query() queries a lookup table for an approximate nearest neighbour of a 
   table.add(v1);
   table.add(v2);
 
-  t.is(table.query(v3, 2), v1);
+  t.is(table.query(v3), v1);
 });
 
 test('#query() throws when querying a vector of a dimensionality different from the table', async t => {
