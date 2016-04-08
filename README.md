@@ -30,7 +30,7 @@ t.add(V([1, 0, 1, 1]));
 t.add(V([0, 1, 0, 0]));
 t.add(V([0, 1, 1, 0]));
 
-t.query(V([1, 0, 0, 1]), 2);
+t.query(V([1, 0, 0, 1]));
 // => V([1, 0, 1, 1]) with high probability
 ```
 
