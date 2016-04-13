@@ -5,7 +5,7 @@ import {and, or} from '../lib/amplify';
 
 test('and() amplifies a family of functions by concatenation of hashes', async t => {
   const f = and(family(6), 3);
-  const v = V([1, 1, 1, 1, 1, 1]);
+  const v = new V([1, 1, 1, 1, 1, 1]);
 
   for (const h of f) {
     const hs = h(v);
@@ -18,7 +18,7 @@ test('and() amplifies a family of functions by concatenation of hashes', async t
 
 test('or() amplifies a family of functions by extension of hashes', async t => {
   const f = or(family(6), 3);
-  const v = V([1, 1, 1, 1, 1, 1]);
+  const v = new V([1, 1, 1, 1, 1, 1]);
 
   for (const h of f) {
     const hs = h(v);

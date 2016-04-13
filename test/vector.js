@@ -3,12 +3,12 @@ import V, {distance} from '../lib/vector';
 
 test('.size() returns the size of a vector', async t => {
   const fixtures = [
-    [V(), 0],
-    [V([1]), 1],
-    [V([0]), 1],
-    [V([1, 0]), 2],
-    [V([0, 1]), 2],
-    [V([0, 0]), 2]
+    [new V(), 0],
+    [new V([1]), 1],
+    [new V([0]), 1],
+    [new V([1, 0]), 2],
+    [new V([0, 1]), 2],
+    [new V([0, 0]), 2]
   ];
 
   for (const [v, s] of fixtures) {
@@ -17,7 +17,7 @@ test('.size() returns the size of a vector', async t => {
 });
 
 test('.get() returns the specified component of a vector', async t => {
-  const v = V([1, 0, 1, 1]);
+  const v = new V([1, 0, 1, 1]);
 
   t.is(v.get(0), 1);
   t.is(v.get(1), 0);
@@ -27,14 +27,14 @@ test('.get() returns the specified component of a vector', async t => {
 
 test('#distance() returns the distance between two vectors', async t => {
   const fixtures = [
-    [V(), V(), 0],
-    [V([1]), V([1]), 0],
-    [V([1]), V([0]), 1],
-    [V([1, 0]), V([1, 0]), 0],
-    [V([1, 1]), V([1, 0]), 1],
-    [V([0, 1]), V([1, 1]), 1],
-    [V([0, 1]), V([0, 0]), 1],
-    [V([0, 1]), V([1, 0]), 2]
+    [new V(), new V(), 0],
+    [new V([1]), new V([1]), 0],
+    [new V([1]), new V([0]), 1],
+    [new V([1, 0]), new V([1, 0]), 0],
+    [new V([1, 1]), new V([1, 0]), 1],
+    [new V([0, 1]), new V([1, 1]), 1],
+    [new V([0, 1]), new V([0, 0]), 1],
+    [new V([0, 1]), new V([1, 0]), 2]
   ];
 
   for (const [u, v, d] of fixtures) {

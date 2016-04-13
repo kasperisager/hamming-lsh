@@ -4,7 +4,7 @@ import family from '../lib/family';
 
 test('family() builds a family of base functions', async t => {
   const fixtures = [
-    [4, V([1, 4, 2, 3])]
+    [4, new V([1, 4, 2, 3])]
   ];
 
   for (const [d, v] of fixtures) {
