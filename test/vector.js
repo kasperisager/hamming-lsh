@@ -1,5 +1,5 @@
 import test from 'ava';
-import V, {distance} from '../lib/vector';
+import V from '../lib/vector';
 
 test('#size() returns the size of a vector', async t => {
   const fixtures = [
