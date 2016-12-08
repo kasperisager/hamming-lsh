@@ -4,7 +4,6 @@
   "description": "An implementation of locality-sensitive hashing for Hamming space",
   "license": "MIT",
   "repository": "kasperisager/hamming-lsh",
-  "private": true,
   "author": "Kasper Kronborg Isager <kasperisager@gmail.com>",
   "scripts": {
     "test": "xo && nyc ava",
