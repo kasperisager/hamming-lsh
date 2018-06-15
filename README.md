@@ -22,16 +22,16 @@ $ npm install --save hamming-lsh
 ## Usage
 
 ```js
-import {Vector as V, Table as T} from 'hamming-lsh';
+import {Vector, Table} from 'hamming-lsh';
 
-const t = T(4, 2, 3);
+const t = new Table(4, 2, 3);
 
-t.add(V([1, 0, 1, 1]));
-t.add(V([0, 1, 0, 0]));
-t.add(V([0, 1, 1, 0]));
+t.add(new Vector([1, 0, 1, 1]));
+t.add(new Vector([0, 1, 0, 0]));
+t.add(new Vector([0, 1, 1, 0]));
 
-t.query(V([1, 0, 0, 1]));
-// => V([1, 0, 1, 1]) with high probability
+t.query(new Vector([1, 0, 0, 1]));
+// => Vector [1, 0, 1, 1] with high probability
 ```
 
 ## API
@@ -53,7 +53,7 @@ Construct a lookup table for vectors of dimensionality `d` where vectors are has
 const d = 4;
 const k = 2;
 const l = 2;
-const t = Table(d, k, l);
+const t = new Table(d, k, l);
 ```
 
 #### add
@@ -67,7 +67,7 @@ Add a vector `v` to the lookup table.
 **Examples**
 
 ```javascript
-const v = Vector([1, 0, 1, 0]);
+const v = new Vector([1, 0, 1, 0]);
 t.add(v);
 ```
 
@@ -82,7 +82,7 @@ Query the lookup table for the nearest neighbour of a query vector `q`.
 **Examples**
 
 ```javascript
-const q = Vector([0, 1, 0, 1]);
+const q = new Vector([0, 1, 0, 1]);
 t.query(q);
 // => Vector(...)
 ```
@@ -96,7 +96,7 @@ Get the number of vectors in the lookup table.
 **Examples**
 
 ```javascript
-t.add(Vector(...));
+t.add(new Vector(...));
 t.size();
 // => 1
 ```
@@ -124,7 +124,7 @@ Construct a vector consisting of binary components where truthy values represent
 **Examples**
 
 ```javascript
-const v = Vector([1, 0, 1]);
+const v = new Vector([1, 0, 1]);
 ```
 
 #### get
@@ -138,7 +138,7 @@ Get the component at the specified index of the vector.
 **Examples**
 
 ```javascript
-const v = Vector([1, 0, 1, 1]);
+const v = new Vector([1, 0, 1, 1]);
 v.get(0);
 // => 1
 ```
@@ -152,7 +152,7 @@ Get the number of components in the vector.
 **Examples**
 
 ```javascript
-const v = Vector([1, 0, 0, 1]);
+const v = new Vector([1, 0, 0, 1]);
 v.size();
 // => 4
 ```
@@ -161,4 +161,4 @@ Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ## License
 
-Copyright © 2016 [Kasper Kronborg Isager](https://github.com/kasperisager). Licensed under the terms of the [MIT license](LICENSE.md).
+Copyright © 2016-2018 [Kasper Kronborg Isager](https://github.com/kasperisager). Licensed under the terms of the [MIT license](LICENSE.md).
